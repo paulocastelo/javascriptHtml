@@ -1,0 +1,81 @@
+<meta charset="UTF-8">
+<h1>Form test! Guessing a randomic number.</h1>
+<input/>
+<button>Guess</button>
+
+<script>
+    document.write("<br>");
+    newSection("You have 3 attepmts");
+	var myInput = document.querySelector("input");
+	myInput.focus();
+	var myButton = document.querySelector("button");
+	myButton.onclick = verifyNumber;
+	var counter = 0;
+    const secretArray = [];
+    var attepmts = 3;
+    fillArray();
+    printArray();
+    
+    function randomizeNumber(){
+        return Math.round(Math.random() * 10);
+    }
+
+    // Filling secret arrays
+    function fillArray(){
+        for(i = 0; i < attepmts; i++){
+            var randomNumber = randomizeNumber();
+            if (secretArray.find(element => element == randomNumber) || randomNumber == 0){
+                console.log("Dropped number " + randomNumber);
+                i--;
+            } else {
+                secretArray[i] = randomNumber;
+            }
+            console.log("Inserted number: " + secretArray[i]);
+        }
+    }
+
+    function printArray(){
+        secretArray.forEach(function(element){
+            console.log("Value: " + element);
+        });
+    }
+
+	function breakLine(){
+		document.write("<br>");
+	}
+	
+	function showMessage(message){
+		document.write(message);
+		breakLine();
+	}
+	
+	function newSection(title){
+		document.write("-----------------------------------------------------------");
+		document.write("<br>");
+		showMessage(title);
+		document.write("<br>");
+	}
+	
+	function verifyNumber(){
+		var testNumber = myInput.value;
+        secretArray.find(element => element == testNumber)
+        console.log(secretArray.find(element => element == testNumber));
+
+		if (counter < 3){
+            if (secretArray.find(element => element == testNumber) != testNumber){
+                alert("Incorrect answer! You have " + (2 - counter) + " attempts.");
+			}
+			else {
+                alert("Congratulations! Correct answer!");
+                fillArray();
+                counter	= 0;
+			}
+			counter++;
+		} else {
+			alert("You have no more attempts!");
+		}
+		myInput.value = "";
+		myInput.focus();
+	}
+	
+</script>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<h1>Segundo teste!</h1>
+
+<script>
+	function breakLine(){
+		document.write("<br>");
+	}
+	
+	function showMessage(message){
+		document.write(message);
+		breakLine();
+	}
+	
+	function newSection(title){
+		document.write("-----------------------------------------------------------");
+		document.write("<br>");
+		showMessage(title);
+		document.write("<br>");
+	}	
+	
+    var numberTable = parseInt(prompt("Insert the multiplication mumber: "));
+
+	// <!-- Using While -->
+	function multiplyTableWhile(number){
+		newSection("Multiplication table using while.");
+        var counter = 1;
+		while (counter <= 15){
+            showMessage(numberTable + " x " + counter + " = " + (counter * numberTable));
+            counter++;
+        }
+        showMessage("End.")
+	}
+
+	// <!-- Using For -->
+	function multiplyTableFor(number){
+		newSection("Multiplication table using while.");
+		// var numberTable = parseInt(prompt("Insert the multiplication mumber: "));
+        for (i = 1; i <= 15; i++){
+            showMessage(numberTable + " x " + i + " = " + (i * numberTable));
+        }
+        showMessage("End.")
+	}
+	
+    multiplyTableWhile();
+    multiplyTableFor();''
+</script>

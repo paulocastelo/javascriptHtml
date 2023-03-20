@@ -1,0 +1,56 @@
+<meta charset="UTF-8">
+<h1>Segundo teste!</h1>
+
+<script>
+	function breakLine(){
+		document.write("<br>");
+	}
+	
+	function showMessage(message){
+		document.write(message);
+		breakLine();
+	}
+	
+	function newSection(title){
+		document.write("-----------------------------------------------------------");
+		document.write("<br>");
+		showMessage(title);
+		document.write("<br>");
+	}
+	
+	function calcIMC(name, weight, height){
+		<!-- var imc = weight / (height * height); -->
+		<!-- showMessage("O IMC de " + name + " é: " + imc); -->
+		<!-- return imc; -->
+		return weight / (height * height);
+	}
+	
+	function imcStatus (imc){
+		var lowIMC = 18.5;
+		var highIMC = 35;
+		if (imc == lowIMC){
+			showMessage("Seu IMC está no limite");
+		}
+		if (imc < lowIMC){
+			showMessage("Seu IMC está abaixo do recomendado.");
+		}
+		if (imc > highIMC){
+			showMessage("Seu IMC está acima do recomendado.");
+		}
+		if (imc >= lowIMC && imc <= highIMC){
+			showMessage("Seu IMC está excelente.");
+		}
+	}
+	
+	<!-- New Section -->
+	newSection("Calcula IMC");
+	var name = "Paulo";
+	var wgt = 74;
+	var hgt = 1.76;
+	showMessage("O peso de " + name + " é: " + wgt + ".");
+	showMessage("A altura de " + name + " é: " + hgt + ".");
+	var imc = calcIMC(name, wgt, hgt);
+	showMessage("O IMC de " + name + " é: " + Math.round(imc));
+	showMessage(imc);
+	imcStatus(imc);
+</script>

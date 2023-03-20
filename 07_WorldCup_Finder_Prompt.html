@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<h1>Segundo teste!</h1>
+
+<script>
+	function breakLine(){
+		document.write("<br>");
+	}
+	
+	function showMessage(message){
+		document.write(message);
+		breakLine();
+	}
+	
+	function newSection(title){
+		document.write("-----------------------------------------------------------");
+		document.write("<br>");
+		showMessage(title);
+		document.write("<br>");
+	}	
+	
+	function verifyWorldCup(number){
+		newSection("World Soccer Cup.");
+		
+		var firstTime = 1930;
+		// <!-- var currentDate = new Date(); -->
+		var lastTime = new Date().getFullYear();
+		const cupOccurs = [];
+		
+		// <!-- Filling array -->
+		for (i = firstTime; i < lastTime; i += 4){
+			cupOccurs.push(i);
+		}
+		
+		// <!-- Finding in array -->
+		var search = cupOccurs.indexOf(number);
+		if (search == -1){
+			showMessage("<b>You're wrong</b>. There wasn't a cup in " + number);			
+		}
+		else{
+			showMessage("<b>You're allrigh</b>. There was a cup in " + number);
+		}		
+		
+		// <!-- Printing array -->
+		newSection("These are the World Cup occurences:");
+		cupOccurs.forEach(function(occurs){
+			showMessage(occurs);
+		});
+
+		showMessage("Fim");
+	}
+
+	// <!-- Using While -->
+	function verifyWorldCupWhile(number){
+		newSection("World Soccer Cup.");
+		
+		var firstTime = 1930;
+		// <!-- var currentDate = new Date(); -->
+		var lastTime = new Date().getFullYear();
+		const cupOccurs = [];
+		
+		// <!-- Filling array -->
+		var ind = firstTime;
+		while ( ind < lastTime){
+			cupOccurs.push(i);
+			ind += 4
+		}
+		
+		// <!-- Finding in array -->
+		var search = cupOccurs.indexOf(number);
+		if (search == -1){
+			showMessage("<b>You're wrong</b>. There wasn't a cup in " + number);			
+		}
+		else{
+			showMessage("<b>You're allrigh</b>. There was a cup in " + number);
+		}		
+		
+		// <!-- Printing array -->
+		newSection("These are the World Cup occurences:");
+		cupOccurs.forEach(function(occurs){
+			showMessage(occurs);
+		});
+
+		showMessage("Fim");
+	}
+
+	var cupNumber = parseInt(prompt("Insert a cup year to verify: "));
+	verifyWorldCup(cupNumber);
+	
+</script>

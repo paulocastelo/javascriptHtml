@@ -1,0 +1,46 @@
+<meta charset="UTF-8">
+<h1>Segundo teste!</h1>
+
+<script>
+	function breakLine(){
+		document.write("<br>");
+	}
+	
+	function showMessage(message){
+		document.write(message);
+		breakLine();
+	}
+	
+	function newSection(title){
+		document.write("-----------------------------------------------------------");
+		document.write("<br>");
+		showMessage(title);
+		document.write("<br>");
+	}
+
+	
+	function guessNumber(){
+		showMessage("Guess the number.");
+		var number = 0;
+		var counter = 0;
+		var numberGuess = Math.round(Math.random() * 10);
+		// console.log(numberGuess);
+		for(i = 0; i < 3;i++){
+			var number = parseInt(prompt("Insert you guess number."));
+			if (numberGuess == number){
+				showMessage("Congratulations! Correct answer!");
+				break;
+			}
+			else {
+				showMessage("Incorrect answer! You have " + (3 - (i + 1)));
+			}
+			counter++;
+		}
+	}
+	
+	// <!-- New Section -->
+	newSection("You have 3 attempts to guess the number between 1 and 10.");
+	guessNumber();
+	showMessage("Fim.");
+	
+</script>

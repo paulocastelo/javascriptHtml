@@ -1,0 +1,105 @@
+<meta charset="UTF-8">
+<h1>Meu primeiro testes!</h1>
+<br>
+Seria isto o meu programa? Descubra visitando o <a href="www.alura.com.br">Alura</a>!
+
+<script>
+	function breakLine(){
+		document.write("<br>");
+	}
+	
+	function printNewSection(){
+		document.write("-----------------------------------------------------------");
+		document.write("<br>");
+	}
+	
+	function getAndSetNameAge(name, birthYear){
+		var currentTime = new Date();
+		var actualYear = currentTime.getFullYear();
+		var age = actualYear - birthYear;
+		document.write("A idade de " + name + " é " + age + ".");
+		breakLine();
+		
+	}
+
+	<!-- New section -->
+	var currentTime = new Date();
+	var ano = currentTime.getFullYear();
+	breakLine();
+	document.write("Vou escrever uma linha em HTML.");
+	breakLine();
+	document.write("A idade de Paulo Castelo é: ");
+	document.write(ano - 1981);
+	breakLine();
+	
+	<!-- New Section -->
+	printNewSection();
+	document.write("A média entre 20 + 30 + 10 é: " + ((20 + 30 + 10)/3));
+	
+	<!-- Using for -->
+	breakLine();
+	printNewSection();
+	breakLine();
+	document.write("<b>Exercícios de tabuadas:</b>");
+	breakLine();
+	document.write("Tabuada de 8:");
+	breakLine();
+	var tabuada = 8;
+	var range = 15;
+	var value = 0;
+	var result = 0;
+	var phrase = '';
+	for (let i = 0; i < range; i++) {
+		value = i + 1;
+		result = tabuada * value;
+		phrase = tabuada + " vezes " + value + " é " + result;
+		document.write(phrase);	
+		breakLine();
+	}
+
+	<!-- Using Math.round() -->
+	breakLine();
+	printNewSection();
+	breakLine();
+	var var1,  ar2, var3;
+	var1 = 29;
+	var2 = 38;
+	var3 = 13;
+	var calc = (var1 + var2 + var3)/3;
+	document.write("A média arredondada entre " + var1 + ", " + var2 + " e " + var3 + " é: " + Math.round(calc) + ".");
+	breakLine();
+	
+	<!-- Desafios -->
+	breakLine();
+	printNewSection();
+	breakLine();
+	document.write("<b>Cálculo de consumo</b>");
+	breakLine();
+	var tanque = 40;
+	var gasol, alchol = 0;
+	gasol = 480;
+	alchol = 300;
+	fuel = 0;
+	var consumo = fuel/tanque;
+	document.write("Capacidade do tanque do carro: " + tanque + "l.");
+	breakLine();
+	document.write("Distância om tanque cheio de :");
+	breakLine();
+	document.write("- Gasolina: " + gasol + "km.");
+	breakLine();
+	document.write("- Álcool: " + alchol + "km.");
+	breakLine();
+	document.write("<br>Qual o consumo km/l de cada um?");
+	breakLine();
+	fuel = 480;
+	consumo = fuel/tanque;
+	document.write("- Consumo de Gasolina: " + consumo + "km.");
+	breakLine();
+	fuel = 300;
+	consumo = fuel/tanque;
+	document.write("- Consumo de Álcool: " + consumo + "km.");
+	breakLine();
+	
+	printNewSection();
+	getAndSetNameAge("Paco Estrella", 1981);
+</script>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<h1>Segundo teste!</h1>
+
+<script>
+	function breakLine(){
+		document.write("<br>");
+	}
+	
+	function showMessage(message){
+		document.write(message);
+		breakLine();
+	}
+	
+	function newSection(title){
+		document.write("-----------------------------------------------------------");
+		document.write("<br>");
+		showMessage(title);
+		document.write("<br>");
+	}
+	
+	// <!-- Using While -->
+	function averageFamily(number){
+		newSection("<b>Average Family Age Calculation </b>.");
+        var numberOfMember = parseInt(prompt("Insert you family's number of members:"));
+        var arrayOfAge = [];
+        var sumOfAllAges = 0;
+        // Gathering all ages
+        for(i = 0; i < numberOfMember; i++){
+            if(i == 0){
+                arrayOfAge[i] = parseInt(prompt("Insert the first age:"));
+            }else{
+                arrayOfAge[i] = parseInt(prompt("Insert the next age:"));
+            }
+        }
+
+        arrayOfAge.forEach(function (element) {
+            sumOfAllAges += element;
+        });
+        showMessage(sumOfAllAges);
+        showMessage("The average is :" + (sumOfAllAges/numberOfMember));
+
+        showMessage("End.")
+	}
+	
+    averageFamily();
+</script>

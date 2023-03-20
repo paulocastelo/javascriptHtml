@@ -1,0 +1,46 @@
+<meta charset="UTF-8">
+<h1>Quarto teste!</h1>
+
+<script>
+	function breakLine(){
+		document.write("<br>");
+	}
+	
+	function showMessage(message){
+		document.write(message);
+		breakLine();
+	}
+	
+	function newSection(title){
+		document.write("-----------------------------------------------------------");
+		document.write("<br>");
+		showMessage(title);
+		document.write("<br>");
+	}
+	
+	function point(victories, draws){
+		return victories * 3 + draws
+	}
+	
+	function statusTeam(vLastYear, vThisYear){
+		if (vThisYear == vLastYear) {
+			showMessage("Your team has the same points of victory from last year.");
+		}
+		if (vThisYear > vLastYear) {
+			showMessage("Your team had improved the points of victory from last year.");
+		}
+		if (vThisYear < vLastYear) {
+			showMessage("Your team had deteriorated the points of victory from last year.");		
+		}
+	}
+	
+	newSection("Vitory points test!");
+	var nameInput = prompt("Insert your name: ");
+	var victories = parseInt(prompt(nameInput + ", insert your number of vitories"));
+	var draws = parseInt(prompt(nameInput + ", insert your number of draw games"));
+	var points = point(victories,draws);
+	var lYearPoints = parseInt(prompt(nameInput + ", insert your last year points"));
+	showMessage("Your actual points are " + points);
+	statusTeam(lYearPoints, points);
+	
+</script>

@@ -1,0 +1,35 @@
+<meta charset="UTF-8">
+<h1>Segundo teste!</h1>
+
+<script>
+	function breakLine(){
+		document.write("<br>");
+	}
+	
+	function showMessage(message){
+		document.write(message);
+		breakLine();
+	}
+	
+	function newSection(title){
+		document.write("-----------------------------------------------------------");
+		document.write("<br>");
+		showMessage(title);
+		document.write("<br>");
+	}
+
+    function printingAsterisks(){
+        var rows = parseInt(prompt("How much rows do you want?"));
+        var columns = parseInt(prompt("How much columns do you want?"));
+        for(i = 0; i < rows; i ++){
+            for(j = 0; j < columns; j++){
+                document.write("*");
+            }
+            document.write("<br>");
+        }
+    }
+
+	newSection("Printing asterisk!");
+    printingAsterisks();
+	
+</script>

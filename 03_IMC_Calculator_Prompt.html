@@ -1,0 +1,36 @@
+<meta charset="UTF-8">
+<h1>Terceiro teste!</h1>
+
+<script>
+	function breakLine(){
+		document.write("<br>");
+	}
+	
+	function showMessage(message){
+		document.write(message);
+		breakLine();
+	}
+	
+	function newSection(title){
+		document.write("-----------------------------------------------------------");
+		document.write("<br>");
+		showMessage(title);
+		document.write("<br>");
+	}
+	
+	function calcIMC(weight, height){
+	<!-- function calcIMC(name, weight, height){ -->
+		<!-- var imc = weight / (height * height); -->
+		<!-- showMessage("O IMC de " + name + " é: " + imc); -->
+		<!-- return imc; -->
+		return weight / (height * height);
+	}
+	
+	<!-- New Section -->
+	newSection("Calcula IMC");
+	var nameInput = prompt("Informe seu nome:");
+	var wgtInput = prompt(nameInput + ", informe seu peso:");
+	var hgtInput = prompt(nameInput + ", informe sua altura:");
+	var imc = calcIMC(wgtInput, hgtInput);
+	showMessage("O IMC de " + nameInput + " é: " + Math.round(imc));
+</script>

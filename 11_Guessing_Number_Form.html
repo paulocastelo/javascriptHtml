@@ -1,0 +1,54 @@
+<meta charset="UTF-8">
+<h1>Form test! Guessing a randomic number.</h1>
+<input/>
+<button>Guess</button>
+
+<script>
+	var myInput = document.querySelector("input");
+	myInput.focus();
+	var myButton = document.querySelector("button");
+	var numberGuess = 0;
+	myButton.onclick = verifyNumber;
+	var counter = 0;
+
+	function breakLine(){
+		document.write("<br>");
+	}
+	
+	function showMessage(message){
+		document.write(message);
+		breakLine();
+	}
+	
+	function newSection(title){
+		document.write("-----------------------------------------------------------");
+		document.write("<br>");
+		showMessage(title);
+		document.write("<br>");
+	}
+	
+
+	function verifyNumber(){
+		if (numberGuess == 0){
+			numberGuess = Math.round(Math.random() * 10);
+		}
+		console.log(numberGuess);
+		number = myInput.value;
+		if (counter < 3){
+			if (numberGuess == number){
+				alert("Congratulations! Correct answer!");
+				numberGuess = Math.round(Math.random() * 10);
+				counter	= 0;
+			}
+			else {
+				alert("Incorrect answer! You have " + (2 - counter) + " attempts.");
+			}
+			counter++;
+		} else {
+			alert("You have no more attempts!");
+		}
+		myInput.value = "";
+		myInput.focus();
+	}
+	
+</script>
