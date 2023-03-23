@@ -1,0 +1,44 @@
+<canvas width="600" height="400"></canvas>
+
+<script>
+    function drawSquare(x, y, color){
+        var screen = document.querySelector('canvas');
+        var brush = screen.getContext('2d');
+
+        brush.fillStyle = color;
+        brush.fillRect(x, y, 50,50);
+        brush.fillStroke = 'black';
+        brush.fillStyle;
+        brush.strokeRect(x, y, 50,50);
+    }
+
+    function repeatSquares(color, direction, times){
+        // var direction = '';
+        var incrementor = 0;
+        // var times = 0;
+        if(direction =='right'){
+            for(i = 0; i < times; i++){
+                drawSquare(incrementor, 0, color);
+                incrementor += 50;
+            }
+        } else if(direction == 'down'){
+            for(i = 0; i < times; i++){
+                drawSquare(0, incrementor, color);
+                    incrementor += 50;
+            }
+        } else {
+            document.write("Wrong option!");
+        }
+
+    }
+
+    // drawSquare(0, 0, 'yellow');
+    // drawSquare(50, 0, 'brown');
+    // drawSquare(100, 0, 'black');
+    // drawSquare(50, 50, 'yellow');
+    // drawSquare(50, 100, 'brown');
+    // drawSquare(50, 150, 'black');
+    repeatSquares('blue', 'right', 5);
+    repeatSquares('orange', 'down', 10);
+
+</script>
