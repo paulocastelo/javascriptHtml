@@ -1,0 +1,24 @@
+# Osmosis Chrome Extension
+
+This is a Chrome extension that allows you to record information from web pages and generate a new page with the stored information.
+
+## How to use
+
+1. Install the extension in your Chrome browser.
+2. Visit a web page and click the extension button.
+3. Click the "Record" button to start recording information from the page.
+4. Click the "Generate" button to create a new page with the recorded information.
+5. Click the "Close" button to close the extension popup.
+
+## Known issues
+
+- Sometimes the extension doesn't work properly when there are multiple tabs open.
+- The extension doesn't work on pages with dynamic content.
+
+## Contributing
+
+If you find a bug or have a suggestion for a new feature, please open an issue or submit a pull request.
+
+## License
+
+This project is licensed under the CASTLECOMPANY License. See the LICENSE file for details.

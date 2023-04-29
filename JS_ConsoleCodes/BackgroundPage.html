@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>URL Viewer</title>
+</head>
+<body>
+	<iframe id="url-frame" src="PageList.html"></iframe>
+	<button id="show-url">Show URL</button>
+	<div id="popup" style="display:none">
+		<h2>URL Viewer</h2>
+		<p id="current-url"></p>
+		<button id="next-url">Next</button>
+	</div>
+	<script>
+		// Get the iframe element and its contents
+		const urlFrame = document.getElementById('url-frame');
+		const urlContent = urlFrame.contentDocument || urlFrame.contentWindow.document;
+
+		// Function to extract URLs from the iframe content
+		function getUrls() {
+			const links = urlContent.getElementsByTagName('a');
+			const urls = [];
+			for (let i = 0; i < links.length; i++) {
+				urls.push(links[i].href);
+			}
+			return urls;
+		}
+
+		// Create a variable to keep track of the current URL index
+		let currentUrlIndex = 0;
+
+		// Function to display the current URL in the popup
+		function showCurrentUrl() {
+			const currentUrl = document.getElementById('current-url');
+			currentUrl.innerText = urls[currentUrlIndex];
+		}
+
+		// Attach an event listener to the "Show URL" button
+		const showUrlButton = document.getElementById('show-url');
+		showUrlButton.addEventListener('click', () => {
+			// Extract URLs from the iframe content
+			const urls = getUrls();
+			// Show the first URL in the popup
+			const popup = document.getElementById('popup');
+			popup.style.display = 'block';
+			showCurrentUrl();
+		});
+
+		// Attach an event listener to the "Next" button
+		const nextUrlButton = document.getElementById('next-url');
+		nextUrlButton.addEventListener('click', () => {
+			// Increment the current URL index and show the next URL in the popup
+			currentUrlIndex++;
+			showCurrentUrl();
+		});
+	</script>
+    <iframe src="https://www.google.com/" width="100%" height="600px"></iframe>
+</body>
+</html>
