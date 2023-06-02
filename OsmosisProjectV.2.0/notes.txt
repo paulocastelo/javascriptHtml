@@ -1,0 +1,40 @@
+Vr1.0
+Chrome extension making: I want to make a chrome extension to make the next steps. The name of extension is "Osmosis":
+- I visit a page;
+- The extension load the content;
+- I click the extension on the chrome;
+- The extension show me the options with the sections of the page to save;
+- One of a Option is "Allpage". This option allows to get all text in the page;
+- The others options will be the sections of the pages;
+- If there is no more than 1 section, the extesion will shows only one option;
+- After select the option, it will show option "Save";
+- When I click "Save" option, the extension will save temporary the selected section;
+- When I click a link on the page, the extension will load the content.
+- If I click record again, I can redo all steps again:
+
+Options of the extension:
+Record: When click, the extension shows options to select section of the page. After click, this option wil not  be able until the click on "Generate";
+Select: This option will be shows only if some section was recorded previously. This option will select the section of the page.
+Save: When clicked, this option will append the information in a temporary page.
+Generate: When click, this option will generate a page with all appended sections saved.
+
+Vr2.0
+Chrome extension making: I want to make a chrome extension to make the next steps. The name of extension is "Osmosis":
+- I visit a page and click the extension on the chrome;
+- The extension show a popup with the buttons: "Record", "Generate", "Close"
+- The extension's will be open until the "Close" button is clicked.
+
+Specifications of the extension's buttons:
+- "Record": When click the button, the extension will:
+1- Create an empty array; If the "Record" button is pressed again, this step will not be repeat until the "Generate" button is pressed;
+2- Copy all information from the page;
+3- Insert the copied information in the created array;
+
+- "Generate": When click the button, the extension will:
+1- Create a page with the all informations in the array created by the "Record" button;
+2- Open the generated page in another browser's tab;
+3- Delete the array;
+
+- "Close":
+1- Delete the array;
+2- Close the extensions popup;
