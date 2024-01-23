@@ -7,6 +7,31 @@ var brush = screen.getContext('2d');
 brush.fillStyle = 'lightGrey';
 brush.fillRect(0, 0, 900, 600);
 
+//draw a rectangle
+/* brush.fillStyle = 'red';
+brush.fillRect(0, 0, 300, 300); */
+
+//draw a pentagon
+/* brush.fillStyle = 'blue';
+brush.beginPath();
+brush.moveTo(450, 150);
+brush.lineTo(300, 300);
+brush.lineTo(450, 450);
+brush.lineTo(600, 300);
+brush.fill(); */
+
+//draw a pentagon
+brush.fillStyle = 'blue';
+brush.beginPath();
+brush.moveTo(450, 150); // Top point
+brush.lineTo(300, 300); // Left point
+brush.lineTo(350, 450); // Bottom left point
+brush.lineTo(550, 450); // Bottom right point
+brush.lineTo(600, 300); // Right point
+brush.closePath(); // Close the path
+brush.fill();
+
+/* 
 brush.fillStyle = 'green';
 brush.fillRect(0, 0, 300, 900);
 
@@ -24,5 +49,5 @@ brush.fill();
 brush.fillStyle = 'blue';
 brush.beginPath();
 brush.arc(450, 300, 100, 0, 2 * 3.14);
-brush.fill();
+brush.fill(); */
 </script>
