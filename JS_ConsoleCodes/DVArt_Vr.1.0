@@ -1,0 +1,16 @@
+// Get the HTML document or element where the <a> tags are located
+const html = document.getElementsByTagName('html')[0];
+
+// Get all the <a> tags with class="username"
+const usernameLinks = html.querySelectorAll('a.username');
+
+// Create an array to hold the text content of the links
+const usernameTags = [];
+
+// Loop through the <a> tags and add their text content to the array
+for (let i = 0; i < usernameLinks.length; i++) {
+  usernameTags.push(usernameLinks[i].textContent);
+}
+
+// Print the array on the console
+console.log(usernameTags);
