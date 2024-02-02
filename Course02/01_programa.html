@@ -7,83 +7,40 @@ var brush = screen.getContext('2d');
 brush.fillStyle = 'lightGrey';
 brush.fillRect(0, 0, 900, 600);
 
-//draw a rectangle
-/* brush.fillStyle = 'red';
-brush.fillRect(0, 0, 300, 300); */
+// draw a perfect five pointed star
+function drawStar(brush, cx, cy, spikes, outerRadius, innerRadius) {
+    var rot = Math.PI / 2 * 3;
+    var x = cx;
+    var y = cy;
+    var step = Math.PI / spikes;
 
-//draw a pentagon
-/* brush.fillStyle = 'blue';
-brush.beginPath();
-brush.moveTo(450, 150);
-brush.lineTo(300, 300);
-brush.lineTo(450, 450);
-brush.lineTo(600, 300);
-brush.fill(); */
+    brush.beginPath();
+    brush.moveTo(cx, cy - outerRadius)
 
-// //draw a octagon
-// brush.fillStyle = 'blue';
-// brush.beginPath();
-// brush.moveTo(450, 150);
-// brush.lineTo(300, 250);
-// brush.lineTo(300, 350);
-// brush.lineTo(450, 450);
-// brush.lineTo(550, 450);
-// brush.lineTo(700, 350);
-// brush.lineTo(700, 250);
-// brush.lineTo(550, 150);
-// brush.fill();
+    for (i = 0; i < spikes; i++) {
+        x = cx + Math.cos(rot) * outerRadius;
+        y = cy + Math.sin(rot) * outerRadius;
+        brush.lineTo(x, y)
+        rot += step
 
-//draw a regular octagon
-brush.fillStyle = 'blue';
-brush.beginPath();
-
-var centerX = 450; // X coordinate of the center of the octagon
-var centerY = 300; // Y coordinate of the center of the octagon
-var radius = 200; // Radius of the octagon
-var angle = Math.PI / 8; // Starting angle (22.5 degrees)
-
-for (var i = 0; i <= 8; i++) {
-    var x = centerX + radius * Math.cos(angle);
-    var y = centerY + radius * Math.sin(angle);
-    if (i === 0) {
-        brush.moveTo(x, y);
-    } else {
-        brush.lineTo(x, y);
+        x = cx + Math.cos(rot) * innerRadius;
+        y = cy + Math.sin(rot) * innerRadius;
+        brush.lineTo(x, y)
+        rot += step
     }
-    angle += Math.PI / 4; // Increment the angle by 45 degrees
+
+    brush.lineTo(cx, cy - outerRadius);
+    brush.closePath();
+    brush.lineWidth=5;
+    brush.strokeStyle='blue';
+    brush.stroke();
+    brush.fillStyle='blue';
+    brush.fill();
 }
 
-brush.closePath();
-brush.fill();
-
-//draw a pentagon
-// brush.fillStyle = 'blue';
-// brush.beginPath();
-// brush.moveTo(450, 150); // Top point
-// brush.lineTo(300, 300); // Left point
-// brush.lineTo(350, 450); // Bottom left point
-// brush.lineTo(550, 450); // Bottom right point
-// brush.lineTo(600, 300); // Right point
-// brush.closePath(); // Close the path
-// brush.fill();
-
-/* 
-brush.fillStyle = 'green';
-brush.fillRect(0, 0, 300, 900);
-
-brush.fillStyle = 'red';
-brush.fillRect(600, 0, 400, 900);
-
-brush.fillStyle = 'yellow';
-brush.beginPath();
-brush.moveTo(450, 300);
-brush.lineTo(300, 600);
-brush.lineTo(600, 600);
-brush.fill();
+// Use the function to draw a star
+drawStar(brush, 450, 300, 5, 200, 100);
 
 
-brush.fillStyle = 'blue';
-brush.beginPath();
-brush.arc(450, 300, 100, 0, 2 * 3.14);
-brush.fill(); */
+
 </script>
